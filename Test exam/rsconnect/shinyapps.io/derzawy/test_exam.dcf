@@ -1,0 +1,10 @@
+name: test_exam
+title:
+username: derzawy
+account: derzawy
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 11162015
+bundleId: 8230882
+url: https://derzawy.shinyapps.io/test_exam/
+version: 1
