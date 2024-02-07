@@ -1,0 +1,329 @@
+arabic.country.wise.average <- read.csv("F:/GPH-THD GERMANY/كل ما يتعلق بالدراسة/الترم الثالث/Digital Health 23-24/archive/archive2/arabic-country-wise-average.csv", header=FALSE)
+View(arabic.country.wise.average)
+# Load the dataset
+data <- read.csv("arabic.country.wise.average")
+arabic.country.wise.average
+any(is.na(data))
+data_clean <- na.omit(data)
+data_clean <- na.omit(data)
+data_clean <- na.omit(data)
+any(is.na(data))
+# Load required libraries
+library(ggplot2)
+library(plotly)
+# Example: Scatter plot
+ggplot(data_clean, aes(x = column1, y = column2)) +
+geom_point()
+# Example: Customize scatter plot
+ggplot(data_clean, aes(x = column1, y = column2)) +
+geom_point(color = "blue") +
+labs(title = "Scatter Plot", x = "X-axis Label", y = "Y-axis Label") +
+theme_minimal()
+install.packages("plotly")
+# Example: Interactive scatter plot
+plot_ly(data_clean, x = ~column1, y = ~column2, type = "scatter", mode = "markers")
+# Example: Interactive scatter plot
+plotly(data_clean, x = ~column1, y = ~column2, type = "scatter", mode = "markers")
+# Load required libraries
+library(ggplot2)
+library(plotly)
+# Example: Scatter plot
+ggplot(data_clean, aes(x = column1, y = column2)) +
+geom_point()
+# Example: Scatter plot
+ggplot(data_clean, aes(x = column1, y = column2)) +
+geom_point()
+`rlang::last_trace()`
+rlang::last_trace()
+# Example: Scatter plot
+ggplot(data_clean, aes(x = column1, y = column5)) +
+geom_point()
+# Example: Scatter plot
+plotly(data_clean, aes(x = column1, y = column2))
+# Example: Scatter plot
+ggplot(data_clean, aes(x = column1, y = column2))
+install.packages(ggplot)
+library(ggplot2)
+ggplot2(data_clean, aes(x = column1, y = column2))
+library(ggplot)
+install.packages(ggplot)
+install.packages(ggplot2)
+ggplot(data_clean, aes(x = column1, y = column2))
+install.packages("ggplot2")
+install.packages("ggplot2")
+library("ggplot2")
+# Example: Scatter plot
+ggplot2(data_clean, aes(x = column1, y = column2)) +
+geom_point()
+# Example: Scatter plot
+ggplot(data_clean, aes(x = column1, y = column2)) +
+geom_point()
+# Example: Scatter plot
+ggplot(data_clean, aes(x = column1, y = column5)) +
+geom_point()
+Error in `ggplot()`:
+> # Example: Scatter plot
+> # Example: Scatter plot
+> # Example: Scatter plot
+# Example of using ggplot2
+library(ggplot2)
+# Assuming 'data' is your dataset
+ggplot(data = "arabic.country.wise.average.csv", aes(x = x_variable, y = y_variable)) +
+geom_point()
+View(arabic.country.wise.average)
+# Example of using ggplot2
+library(ggplot2)
+# Assuming 'data' is your dataset
+ggplot(data = arabic.country.wise.average, aes(x = x_variable, y = y_variable)) +
+geom_point()
+ggplot(data = arabic.country.wise.average, aes(x = country, y = wasting)) +
++     geom_point()
+> ggplot(data = arabic.country.wise.average, aes(x = "country", y = "wasting")) +
+ggplot(data = arabic.country.wise.average, aes(x = "country", y = "wasting")) +   geom_point()
+ggplot(data = arabic.country.wise.average, aes(x = country, y = wasting)) +   geom_point()
+library(ggplot2)
+# Create a dataframe or tibble with your dataset
+df <- data.frame(
+Country = c("Country1", "Country2", "Country3", "Country4"),
+Income_Classification = c("High", "Low", "Medium", "High"),
+Severe_Wasting = c(10, 5, 8, 12),
+Wasting = c(8, 6, 7, 9),
+Overweight = c(20, 25, 18, 22),
+Stunting = c(15, 10, 12, 16),
+Underweight = c(10, 8, 9, 11),
+U5_Population = c(100, 150, 200, 250)
+)
+# Create a scatter plot
+ggplot(data = df, aes(x = Severe_Wasting, y = Wasting)) +
+geom_point() +
+labs(x = "Severe Wasting", y = "Wasting") +
+ggtitle("Scatter plot of Severe Wasting vs. Wasting")
+# ui.R
+library(shiny)
+shinyUI(fluidPage(
+titlePanel("Public Health Data Visualization"),
+sidebarLayout(
+sidebarPanel(
+selectInput("x_variable", "X-axis Variable:", choices = c("Severe Wasting", "Wasting", "Overweight", "Stunting", "Underweight", "U5 Population ('000s)")),
+selectInput("y_variable", "Y-axis Variable:", choices = c("Severe Wasting", "Wasting", "Overweight", "Stunting", "Underweight", "U5 Population ('000s)"))
+),
+mainPanel(
+plotOutput("scatterplot")
+)
+)
+))
+# server.R
+library(shiny)
+library(ggplot2)
+shinyServer(function(input, output) {
+df <- read.table(text = "Country,Income_Classification,Severe_Wasting,Wasting,Overweight,Stunting,Underweight,U5_Population
+ALGERIA,2,2.733333333,5.942857143,12.83333333,19.57142857,7.342857143,3565.213143
+BAHRAIN,3,6.7,7.5,13.75,6.95,63.371,0
+COMOROS,1,5.4,10.125,12.46666667,39.125,19.575,90.28775
+DJIBOUTI,1,9.4,17.075,8.25,30.075,22.625,99.44525
+EGYPT,1,2.4875,5.79,13.7625,28.5,8.64,8911.539818
+IRAQ,2,2.175,5.542857143,9.5,24.51428571,8.5,4213.459714
+JORDAN,2,0.76,2.58,5.72,11.76,3.5,828.3772
+KUWAIT,3,0.628571429,2.522222222,7.988888889,4.661111111,2.353333333,254.7628889
+LEBANON,2,2.25,5.1,18.75,16.85,3.85,436.8065
+LIBYA,2,3.233333333,6.766666667,21.8,26.73333333,7.166666667,621.9033333
+MAURITANIA,1,3.975,13.41,2.6375,34.17,24.86666667,500.2949
+MOROCCO,1,1.95,4.483333333,10.86666667,23.85,6.916666667,3310.867167
+OMAN,3,1.68,7.783333333,3.55,16.06666667,11.91666667,332.156
+QATAR,3,2.1,10.4,11.6,4.8,50.012,0
+SAUDI_ARABIA,3,4.5,7.35,3.65,15.35,9.4,2744.397
+SOMALIA,0,4.35,15.63333333,3.85,32.16666667,26.03333333,2017.326333
+STATE_OF_PALESTINE,1,0.85,3.733333333,7.58,11.55,2.92,594.9526667
+SUDAN,1,4.766666667,15.4,2.9,36.86666667,29.93333333,5551.013
+SYRIAN_ARAB_REPUBLIC,0,5.05,9.566666667,17.825,28.55,10.05,2476.209333
+TUNISIA,1,1.1,3.583333333,9.08,12.45,3.65,928.927
+YEMEN,0,5.3,15.24285714,4.842857143,51.9,37.78571429,3269.476",
+header = TRUE, sep = ",")
+output$scatterplot <- renderPlot({
+ggplot(data = df, aes_string(x = input$x_variable, y = input$y_variable)) +
+geom_point() +
+labs(x = input$x_variable, y = input$y_variable) +
+ggtitle("Scatter plot")
+})
+})
+# server.R
+library(shiny)
+library(ggplot2)
+shinyServer(function(input, output) {
+df <- read.table(text = "Country,Income_Classification,Severe_Wasting,Wasting,Overweight,Stunting,Underweight,U5_Population
+ALGERIA,2,2.733333333,5.942857143,12.83333333,19.57142857,7.342857143,3565.213143
+BAHRAIN,3,6.7,7.5,13.75,6.95,63.371,0
+COMOROS,1,5.4,10.125,12.46666667,39.125,19.575,90.28775
+DJIBOUTI,1,9.4,17.075,8.25,30.075,22.625,99.44525
+EGYPT,1,2.4875,5.79,13.7625,28.5,8.64,8911.539818
+IRAQ,2,2.175,5.542857143,9.5,24.51428571,8.5,4213.459714
+JORDAN,2,0.76,2.58,5.72,11.76,3.5,828.3772
+KUWAIT,3,0.628571429,2.522222222,7.988888889,4.661111111,2.353333333,254.7628889
+LEBANON,2,2.25,5.1,18.75,16.85,3.85,436.8065
+LIBYA,2,3.233333333,6.766666667,21.8,26.73333333,7.166666667,621.9033333
+MAURITANIA,1,3.975,13.41,2.6375,34.17,24.86666667,500.2949
+MOROCCO,1,1.95,4.483333333,10.86666667,23.85,6.916666667,3310.867167
+OMAN,3,1.68,7.783333333,3.55,16.06666667,11.91666667,332.156
+QATAR,3,2.1,10.4,11.6,4.8,50.012,0
+SAUDI_ARABIA,3,4.5,7.35,3.65,15.35,9.4,2744.397
+SOMALIA,0,4.35,15.63333333,3.85,32.16666667,26.03333333,2017.326333
+STATE_OF_PALESTINE,1,0.85,3.733333333,7.58,11.55,2.92,594.9526667
+SUDAN,1,4.766666667,15.4,2.9,36.86666667,29.93333333,5551.013
+SYRIAN_ARAB_REPUBLIC,0,5.05,9.566666667,17.825,28.55,10.05,2476.209333
+TUNISIA,1,1.1,3.583333333,9.08,12.45,3.65,928.927
+YEMEN,0,5.3,15.24285714,4.842857143,51.9,37.78571429,3269.476",
+header = TRUE, sep = ",")
+output$scatterplot <- renderPlot({
+ggplot(data = df, aes_string(x = input$x_variable, y = input$y_variable)) +
+geom_point() +
+labs(x = input$x_variable, y = input$y_variable) +
+ggtitle("Scatter plot")
+})
+})
+shiny::runApp()
+# server.R
+library(shiny)
+library(ggplot2)
+shinyServer(function(input, output) {
+df <- read.table(text = "Country,Income_Classification,Severe_Wasting,Wasting,Overweight,Stunting,Underweight,U5_Population
+ALGERIA,2,2.733333333,5.942857143,12.83333333,19.57142857,7.342857143,3565.213143
+BAHRAIN,3,6.7,7.5,13.75,6.95,63.371,0
+COMOROS,1,5.4,10.125,12.46666667,39.125,19.575,90.28775
+DJIBOUTI,1,9.4,17.075,8.25,30.075,22.625,99.44525
+EGYPT,1,2.4875,5.79,13.7625,28.5,8.64,8911.539818
+IRAQ,2,2.175,5.542857143,9.5,24.51428571,8.5,4213.459714
+JORDAN,2,0.76,2.58,5.72,11.76,3.5,828.3772
+KUWAIT,3,0.628571429,2.522222222,7.988888889,4.661111111,2.353333333,254.7628889
+LEBANON,2,2.25,5.1,18.75,16.85,3.85,436.8065
+LIBYA,2,3.233333333,6.766666667,21.8,26.73333333,7.166666667,621.9033333
+MAURITANIA,1,3.975,13.41,2.6375,34.17,24.86666667,500.2949
+MOROCCO,1,1.95,4.483333333,10.86666667,23.85,6.916666667,3310.867167
+OMAN,3,1.68,7.783333333,3.55,16.06666667,11.91666667,332.156
+QATAR,3,2.1,10.4,11.6,4.8,50.012,0
+SAUDI_ARABIA,3,4.5,7.35,3.65,15.35,9.4,2744.397
+SOMALIA,0,4.35,15.63333333,3.85,32.16666667,26.03333333,2017.326333
+STATE_OF_PALESTINE,1,0.85,3.733333333,7.58,11.55,2.92,594.9526667
+SUDAN,1,4.766666667,15.4,2.9,36.86666667,29.93333333,5551.013
+SYRIAN_ARAB_REPUBLIC,0,5.05,9.566666667,17.825,28.55,10.05,2476.209333
+TUNISIA,1,1.1,3.583333333,9.08,12.45,3.65,928.927
+YEMEN,0,5.3,15.24285714,4.842857143,51.9,37.78571429,3269.476",
+header = TRUE, sep = ",")
+output$scatterplot <- renderPlot({
+ggplot(data = df, aes_string(x = input$x_variable, y = input$y_variable)) +
+geom_point() +
+labs(x = input$x_variable, y = input$y_variable) +
+ggtitle("Scatter plot")
+})
+})
+shiny::runApp()
+> shiny::runApp()
+shiny::runApp()
+> shiny::runApp()
+> shiny::runApp()
+> shiny::runApp()
+> shiny::runApp()
+> shiny::runApp()
+shiny::runApp()
+shiny::runApp()
+shiny::runApp()
+shiny::runApp()
+shiny::runApp()
+shiny::runApp()
+> shiny::runApp()
+> shiny::runApp()
+shiny::runApp()
+shiny::runApp()
+shiny::runApp()
+shiny::runApp()
+shiny::runApp()
+shiny::runApp()
+View(arabic.country.wise.average)
+shiny::runApp()
+shiny::runApp()
+shiny::runApp()
+shiny::runApp()
+shiny::runApp()
+shiny::runApp()
+shiny::runApp()
+shiny::runApp()
+# server.R
+library(shiny)
+library(ggplot2)
+shinyServer(function(input, output) {
+df <- read.table(text = "<Your dataset text here>", header = TRUE)
+output$plot <- renderPlot({
+if (input$plot_type == "Scatter Plot") {
+ggplot(data = df, aes_string(x = input$x_variable, y = input$y_variable)) +
+geom_point() +
+labs(x = input$x_variable, y = input$y_variable) +
+ggtitle("Scatter Plot")
+} else if (input$plot_type == "Bar Chart") {
+ggplot(data = df, aes_string(x = input$x_variable, y = input$y_variable)) +
+geom_bar(stat = "identity") +
+labs(x = input$x_variable, y = input$y_variable) +
+ggtitle("Bar Chart")
+} else if (input$plot_type == "Box Plot") {
+ggplot(data = df, aes_string(x = input$x_variable, y = input$y_variable)) +
+geom_boxplot() +
+labs(x = input$x_variable, y = input$y_variable) +
+ggtitle("Box Plot")
+} else if (input$plot_type == "Histogram") {
+ggplot(data = df, aes_string(x = input$x_variable)) +
+geom_histogram() +
+labs(x = input$x_variable, y = "Frequency") +
+ggtitle("Histogram")
+}
+})shiny::runApp()
+shiny::runApp()
+shiny::runApp()
+View(arabic.country.wise.average)
+shiny::runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+arabic.country.wise.average <- read.csv("F:/GPH-THD GERMANY/كل ما يتعلق بالدراسة/الترم الثالث/Digital Health 23-24/archive/archive2/arabic-country-wise-average.csv")
+View(arabic.country.wise.average)
+runApp()
+runApp()
+View(arabic.country.wise.average)
+View(arabic.country.wise.average)
+arabic.country.wise.average <- read.csv("F:/GPH-THD GERMANY/كل ما يتعلق بالدراسة/الترم الثالث/Digital Health 23-24/archive/archive2/arabic-country-wise-average.csv")
+View(arabic.country.wise.average)
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+# Load the dataset
+df <- read.table("arabic.country.wise.average.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE)
+df <- read.table("arabic-country-wise-average.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE)
+read.csv()
+View(arabic.country.wise.average)
+read.csv()
+View(arabic.country.wise.average)
+str()
